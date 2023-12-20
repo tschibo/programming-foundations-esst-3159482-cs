@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let aktuellesJahr = new Date().getFullYear();
+
+        let geburtstagAlsString = prompt("Geben Sie bitte Ihren Geburtstag ein (YYYY-MM-TT).");
+
+        let geburtstagAlsDatum = new Date(geburtstagAlsString);
+
+        let geburtsJahr = geburtstagAlsDatum.getFullYear();
+
+        if (geburtsJahr < 1900 || geburtsJahr > aktuellesJahr || isNaN(geburtsJahr)) {
+            alert("Geben Sie bitte ein Datum im Format YYYY-MM-TT ein!");
+            location.reload();
+        }
+
+        let alter = aktuellesJahr - geburtsJahr;
+
+        alert("Sie sind " + alter + " Jahre alt.");
+    </script>
+</body>
+
+</html>
